@@ -1,0 +1,14 @@
+{
+  "name": "site-web-partenariat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss style.css"
+  },
+  "author": "Jérémie Permentier",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.34.1"
+  }
+}
