@@ -168,3 +168,70 @@ body {
         margin-bottom: 2rem;
     }
 }
+
+/*********************\
+        Emrys
+\*********************/
+
+.emrys {
+    background: url(./img/divider.svg);
+    background-repeat: no-repeat;
+    &__title {
+        color: $colorFour;
+        @extend %H2;
+        padding: 4rem 0 2rem 0;
+    }
+    &__text {
+        margin: 2rem 0;
+        padding: 1rem;
+        border-left: 4px solid $colorFour;
+    }
+    &__container {
+        display: flex;
+        margin: 1rem 1rem 5rem 1rem;
+    }
+    &__control {
+        position: relative;
+        height: 3rem;
+        margin: 0 2.5rem;
+        &:nth-child(3n){
+            background-color: red;
+        }
+    }
+    &__button {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #000;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        position: absolute;
+        z-index: 2;
+        &--shadow {
+            width: 3rem;
+            height: 3rem;
+            background-color: $colorFour;
+            border-radius: 0.5rem;
+            position: absolute;
+            top: -4px;
+            left: 4px;
+            z-index: 1;
+            transform: rotate(0deg);
+        }
+        &:hover ~ &--shadow {
+            transform: rotate(-360deg);
+            transition: transform 0.75s;
+        }
+    }
+}
+
+.part {
+    background-color: $colorSecondary;
+}
+
+.tree {
+    background-color: $colorPrimary;
+}
+
+.card{
+    background-color: $colorFive;
+}
