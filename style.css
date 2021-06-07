@@ -18,6 +18,10 @@ body, p, h1, h2, h3, h4, h5, h6, ul {
   padding: 0;
 }
 
+p {
+  line-height: 1.25;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -29,7 +33,6 @@ li {
 
 button {
   appearance: none;
-  padding: inherit;
   border: none;
 }
 
@@ -39,13 +42,13 @@ button {
   font-weight: bold;
 }
 
-.emrys__title, .about__title {
+.partners__title, .shop__title, .emrys__title, .about__title {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.about__subtile {
+.shop__subtile, .about__subtile {
   font-size: 1.25rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -61,8 +64,13 @@ body, a {
 /*********************\
         Background
 \*********************/
-header, .about {
-  background: #446DF6;
+header {
+  background: #68b0ab;
+  background: linear-gradient(179deg, #68b0ab 5%, #446df6 100%);
+}
+
+.about {
+  background-color: #446DF6;
 }
 
 /*********************\
@@ -110,7 +118,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 93vh;
+  height: 95vh;
   color: #F2F7F2;
 }
 .hero__text {
@@ -248,6 +256,96 @@ body {
 
 .card {
   background-color: #CFA6F0;
+}
+
+/*********************\
+        Shop
+\*********************/
+.shop {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 47vh;
+}
+.shop__img-Shop {
+  border: 8px solid #68B0AB;
+  border-left: 0;
+  border-radius: 0px 10px 10px 0;
+  position: absolute;
+  z-index: 2;
+}
+.shop__img-dot {
+  position: absolute;
+  left: 16rem;
+  top: 3rem;
+  z-index: 1;
+}
+.shop__card {
+  width: 55vw;
+}
+.shop__title {
+  color: #284092;
+  margin-bottom: 2rem;
+}
+.shop__description {
+  padding-left: 5rem;
+}
+.shop__subtile {
+  color: #284092;
+  margin-bottom: 1rem;
+}
+.shop__text {
+  margin-bottom: 1rem;
+}
+
+/*********************\
+        Partners
+\*********************/
+.partners {
+  max-width: 1000px;
+  color: #F2F7F2;
+  margin: 5rem auto;
+}
+.partners__card {
+  display: flex;
+  border-radius: 10px;
+  background: #68b0ab;
+  background: linear-gradient(346deg, #68b0ab 39%, #446df6 100%);
+}
+.partners__content {
+  padding: 2rem;
+  text-align: right;
+}
+.partners__title {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.partners__text {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.partners__button {
+  width: 9.5rem;
+  height: 3rem;
+  border: 2px solid #fff;
+  border-radius: 1.5rem;
+  background: #FFF;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.partners__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: auto;
+}
+.partners__square {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
