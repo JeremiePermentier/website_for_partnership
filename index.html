@@ -7,66 +7,69 @@
     <title>Le cochon futé | Découvrez le concept d'Emrys</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="home">
-        <nav class="nav">
-            <a href="#home">Le cochon futé</a>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="mailto:johndoe@gmail.com">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
+        <nav class="menuNav container">
+            <a class="menuNav__logo" href="#home">Le cochon futé</a>
+            <div class="menuNav__container">
+                <a href="#about" class="menuNav__link">À propos</a>
+                <a href="mailto:johndoe@gmail.com" class="menuNav__link">Contact</a>
+                <a href="#" class="menuNav__link">FAQ</a>
+            </div>
         </nav>
-        <section>
-            <div>
-                <h1>Augmenter son<br/>pouvoir d'achat</h1>
-                <p>
+        <section class="hero container">
+            <div class="hero__container">
+                <h1 class="hero__title">Augmenter son<br/>pouvoir d'achat</h1>
+                <p class="hero__text">
                     Le cochon futé vous explique le concept<br/>
                     de la coopérative Emrys.
                 </p>
-                <button><a href="#subscription">Adhérer</a></button>
-                <button><a href="#emrys">+ d'infos</a></button>
+                <button class="hero__button">Adhérer</button>
+                <button class="hero__button--color">+ d'infos</button>
             </div>
-            <div>
-                <img src="./img/back-desktop.png" alt="image de décoration.">
-                <img src="./img/cochon_en_or-desktop.png" alt="cochon couleur or.">
+            <div class="hero__img">
+                <img class="hero__back" src="./img/back-desktop.png" alt="image de décoration.">
+                <img class="hero__pig" src="./img/cochon_en_or-desktop.png" alt="cochon couleur or.">
             </div>
         </section>
     </header>
     <main>
-        <section id="about">
-            <h2>À propos de emrys</h2>
-            <div>
-                <div>
-                    <i class="fas fa-users fa-2x"></i>
-                    <h3>coopérative</h3>
-                    <p>
+        <section id="about" class="about">
+            <h2  class="about__title">À propos de emrys</h2>
+            <div  class="about__container">
+                <div class="about__card">
+                    <i class="about__icon fas fa-users fa-3x"></i>
+                    <h3 class="about__subtile">coopérative</h3>
+                    <p class="about__text">
                         Emrys fonctionne avec la structure<br/>
                         d’une coopérative. Ce qui favorise le<br/>
                         partage, la transparence et l’entraide.
                     </p>
                 </div>
-                <div>
-                    <i class="fas fa-gifts fa-2x"></i>
-                    <h3>Carte cadeau</h3>
-                    <p>
+                <div class="about__card">
+                    <i class="about__icon fas fa-gifts fa-3x"></i>
+                    <h3 class="about__subtile">Carte cadeau</h3>
+                    <p class="about__text">
                         Changer vos habitudes de paiement avec<br/>
                         les cartes cadeaux proposer par les<br/>
                         partenaires d’Emrys.
                     </p>
                 </div>
-                <div>
-                    <i class="fas fa-piggy-bank fa-2x"></i>
-                    <h3>Pouvoir d'achat</h3>
-                    <p>
+                <div class="about__card">
+                    <i class="about__icon fas fa-piggy-bank fa-3x"></i>
+                    <h3 class="about__subtile">Pouvoir d'achat</h3>
+                    <p class="about__text">
                         Augmenter votre pouvoir d’achat, avec les<br/>
                         cartes proposées dans la boutique Emrys.
                     </p>
                 </div>
             </div>
         </section>
-        <section id="emrys">
+        <section id="emrys" class="container">
             <h2>
                 Comment fonctionne<br/>
                 emrys
@@ -94,7 +97,7 @@
                 </button>
             </div>
         </section>
-        <section id="shop">
+        <section id="shop" class="container">
             <div>
                 <img src="./img/emrys-site-web.jpg" alt="Ordinateur avec le site web de emrys.">
                 <img src="./img/dot-back-desktop.png" alt="Décoration pour le site web.">
@@ -117,7 +120,7 @@
                 </div>
             </div>
         </section>
-        <section id="partners">
+        <section id="partners" class="container">
             <div>
                 <div>
                     <h2>Les partenaires emrys</h2>
@@ -147,7 +150,7 @@
                 </div>
             </div>
         </section>
-        <section id="subscription">
+        <section id="subscription" class="container">
             <h2>Rejoindre emrys</h2>
             <div>
 
@@ -156,7 +159,7 @@
     </main>
     <footer>
         <h4>Le cochon futé</h4>
-        <div>
+        <div class="container">
             <div>
                 <p>Encore quelques hésitations ?</p>
                 <button><a href="mailto:johndoe@gmail.com">Contacter moi</a></button>

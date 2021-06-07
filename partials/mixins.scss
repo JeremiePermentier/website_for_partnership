@@ -1,0 +1,20 @@
+@mixin btnPrimary 
+(
+    $width: 9.5rem,
+    $height: 3rem,
+    $border: 2px solid #000,
+    $radius: 1.5rem,
+    $background: #FFF,
+    $color: #000,
+    $font-weight: bold,
+    $cursor: pointer
+) {
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $radius;
+    background: $background;
+    color: $color;
+    font-weight: $font-weight;
+    cursor: $cursor;
+}
