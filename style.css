@@ -42,7 +42,7 @@ button {
   font-weight: bold;
 }
 
-.partners__title, .shop__title, .emrys__title, .about__title {
+.subscription__title, .partners__title, .shop__title, .emrys__title, .about__title {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -52,6 +52,11 @@ button {
   font-size: 1.25rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.footer__title {
+  font-size: 1.15rem;
+  font-weight: bold;
 }
 
 /*********************\
@@ -346,6 +351,77 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*********************\
+        Subscribe
+\*********************/
+.subscription {
+  background: #68b0ab;
+  background: linear-gradient(346deg, #68b0ab 39%, #446df6 100%);
+  padding: 3rem 0 4rem 0;
+}
+.subscription__title {
+  color: #fff;
+}
+.subscription__back {
+  width: 900px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #ffffff70;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscription__button {
+  width: 9.5rem;
+  height: 3rem;
+  border: 2px solid #fff;
+  border-radius: 1.5rem;
+  background: #FFF;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*********************\
+        footer
+\*********************/
+.footer {
+  background-color: #333;
+  color: #fff;
+}
+.footer__title {
+  padding-top: 2rem;
+}
+.footer__container {
+  max-width: 1550px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__button {
+  width: 9.5rem;
+  height: 3rem;
+  border: 2px solid #fff;
+  border-radius: 1.5rem;
+  background: #FFF;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.footer__info {
+  margin-top: 1rem;
+}
+.footer__item {
+  margin-top: 1rem;
+}
+.footer__link {
+  color: #fff;
+}
+.footer__coopyright {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
