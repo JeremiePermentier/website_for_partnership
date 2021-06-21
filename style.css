@@ -245,10 +245,10 @@ body {
     font-size: 1rem;
   }
   .hero__img {
-    width: 100%;
+    max-width: 70%;
   }
   .hero__back, .hero__pig {
-    width: inherit;
+    width: 100%;
   }
   .hero__pig {
     left: 0rem;
@@ -298,10 +298,7 @@ body {
     padding: inherit;
   }
   .about__title {
-    padding-inline: 2rem;
-  }
-  .about__title::after {
-    left: 2rem;
+    max-width: 320px;
   }
   .about__card {
     padding-block: 1rem;
@@ -374,6 +371,10 @@ body {
     display: flex;
     margin: 0;
   }
+  .emrys__title {
+    max-width: 320px;
+    margin: auto;
+  }
   .emrys__control {
     margin: 0 2rem;
   }
@@ -435,11 +436,16 @@ body {
     top: 5.5rem;
     width: 150px;
   }
+  .shop__title {
+    max-width: 320px;
+    margin: auto auto 2rem auto;
+  }
   .shop__card {
     width: inherit;
   }
   .shop__description {
     padding: 0;
+    margin: 0 1rem;
   }
 }
 /*********************\
