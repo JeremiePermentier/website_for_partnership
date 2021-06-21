@@ -116,6 +116,49 @@ body {
   font-weight: bold;
 }
 
+.animation-underline {
+  position: relative;
+}
+.animation-underline:after, .animation-underline:before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background-color: #282828;
+  pointer-events: none;
+}
+.animation-underline.light:after, .animation-underline.light:before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  pointer-events: none;
+}
+.animation-underline:before {
+  left: 0;
+  -webkit-transition: width 0s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+  transition: width 0s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+}
+.animation-underline:after {
+  right: 0;
+  -webkit-transition: width 0.4s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+  transition: width 0.4s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+}
+.animation-underline:hover:before {
+  width: 100%;
+  -webkit-transition: width 0.4s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+  transition: width 0.4s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+}
+.animation-underline:hover:after {
+  width: 100%;
+  background: 0 0;
+  -webkit-transition: all 0s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+  transition: all 0s cubic-bezier(0.42, 0.12, 0.31, 0.99);
+}
+
 /*********************\
         Hero
 \*********************/
@@ -141,15 +184,29 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.hero__button:hover {
+  background-color: transparent;
+  transition: 500ms;
+}
 .hero__button--color {
   width: 9.5rem;
   height: 3rem;
   border: 2px solid #fff;
   border-radius: 1.5rem;
   background: transparent;
-  color: #fff;
+  color: #000;
   font-weight: bold;
   cursor: pointer;
+}
+.hero__button--color:hover {
+  background-color: #fff;
+  transition: 500ms;
+}
+.hero__button--color:hover > .hero__link--color {
+  color: #000;
+}
+.hero__link--color {
+  color: #fff;
 }
 .hero__img {
   position: relative;
@@ -171,6 +228,33 @@ body {
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 600px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .hero__container {
+    text-align: center;
+    padding-block: 3rem;
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+  .hero__text {
+    font-size: 1rem;
+  }
+  .hero__img {
+    width: 100%;
+  }
+  .hero__back, .hero__pig {
+    width: inherit;
+  }
+  .hero__pig {
+    left: 0rem;
+    top: 1rem;
+  }
+}
 /*********************\
         About
 \*********************/
@@ -180,6 +264,16 @@ body {
 .about__title {
   max-width: 1600px;
   margin: auto;
+  position: relative;
+}
+.about__title:after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 1.5rem;
 }
 .about__container {
   padding: 5rem;
@@ -198,6 +292,21 @@ body {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 600px) {
+  .about__container {
+    display: block;
+    padding: inherit;
+  }
+  .about__title {
+    padding-inline: 2rem;
+  }
+  .about__title::after {
+    left: 2rem;
+  }
+  .about__card {
+    padding-block: 1rem;
+  }
+}
 /*********************\
         Emrys
 \*********************/
@@ -222,9 +331,6 @@ body {
   position: relative;
   height: 3rem;
   margin: 0 2.5rem;
-}
-.emrys__control:nth-child(3n) {
-  background-color: red;
 }
 .emrys__button {
   width: 3rem;
@@ -263,6 +369,15 @@ body {
   background-color: #CFA6F0;
 }
 
+@media screen and (max-width: 600px) {
+  .emrys__container {
+    display: flex;
+    margin: 0;
+  }
+  .emrys__control {
+    margin: 0 2rem;
+  }
+}
 /*********************\
         Shop
 \*********************/
@@ -272,7 +387,7 @@ body {
   position: relative;
   height: 47vh;
 }
-.shop__img-Shop {
+.shop__img-shop {
   border: 8px solid #68B0AB;
   border-left: 0;
   border-radius: 0px 10px 10px 0;
@@ -303,6 +418,30 @@ body {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 600px) {
+  .shop {
+    display: block;
+    height: inherit;
+  }
+  .shop__container {
+    height: 15rem;
+    padding: 3rem 0 0 0;
+  }
+  .shop__img-shop {
+    width: 250px;
+  }
+  .shop__img-dot {
+    left: 8rem;
+    top: 5.5rem;
+    width: 150px;
+  }
+  .shop__card {
+    width: inherit;
+  }
+  .shop__description {
+    padding: 0;
+  }
+}
 /*********************\
         Partners
 \*********************/
@@ -339,6 +478,10 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.partners__button:hover {
+  background-color: transparent;
+  transition: 500ms;
+}
 .partners__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -353,16 +496,36 @@ body {
   align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .partners__card {
+    display: block;
+  }
+  .partners__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
 /*********************\
         Subscribe
 \*********************/
 .subscription {
   background: #68b0ab;
   background: linear-gradient(346deg, #68b0ab 39%, #446df6 100%);
-  padding: 3rem 0 4rem 0;
+  padding: 2rem 2rem 3rem 2rem;
 }
 .subscription__title {
   color: #fff;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.subscription__title:after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 1.5rem;
 }
 .subscription__back {
   width: 900px;
@@ -383,22 +546,44 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.subscription__button:hover {
+  background-color: transparent;
+  transition: 500ms;
+}
 
+@media screen and (max-width: 600px) {
+  .subscription__back {
+    width: inherit;
+  }
+}
 /*********************\
         footer
 \*********************/
 .footer {
   background-color: #333;
   color: #fff;
+  padding: 2rem;
 }
 .footer__title {
-  padding-top: 2rem;
+  position: relative;
+}
+.footer__title:after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 1.5rem;
 }
 .footer__container {
   max-width: 1550px;
   margin: 1rem auto;
   display: flex;
   justify-content: space-between;
+}
+.footer__contact {
+  padding-top: 2rem;
 }
 .footer__button {
   width: 9.5rem;
@@ -411,8 +596,16 @@ body {
   cursor: pointer;
   margin-top: 1rem;
 }
+.footer__button:hover {
+  background-color: transparent;
+  transition: 500ms;
+}
+.footer__button:hover > .footer__email {
+  color: #fff;
+}
 .footer__info {
   margin-top: 1rem;
+  font-size: 0.8rem;
 }
 .footer__item {
   margin-top: 1rem;
@@ -422,6 +615,12 @@ body {
 }
 .footer__coopyright {
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .footer__container {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

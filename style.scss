@@ -100,6 +100,51 @@ body {
     }
 }
 
+.animation-underline {
+    position: relative;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      height: 2px;
+      width: 0;
+      background-color: #282828;
+      pointer-events: none
+    }
+    &.light:after,
+    &.light:before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      height: 2px;
+      width: 0;
+      background-color: #fff;
+      pointer-events: none
+    }
+    &:before {
+      left: 0;
+      -webkit-transition: width 0s cubic-bezier(.42, .12, .31, .99);
+      transition: width 0s cubic-bezier(.42, .12, .31, .99);
+    }
+    &:after {
+     right: 0;
+     -webkit-transition: width .4s cubic-bezier(.42, .12, .31, .99);
+     transition: width .4s cubic-bezier(.42, .12, .31, .99)
+    }
+    &:hover:before {
+      width: 100%;
+      -webkit-transition: width .4s cubic-bezier(.42, .12, .31, .99);
+      transition: width .4s cubic-bezier(.42, .12, .31, .99)
+    }
+    &:hover:after {
+      width: 100%;
+      background: 0 0;
+      -webkit-transition: all 0s cubic-bezier(.42, .12, .31, .99);
+      transition: all 0s cubic-bezier(.42, .12, .31, .99)
+    }
+}
+
 /*********************\
         Hero
 \*********************/
@@ -120,9 +165,25 @@ body {
     &__button {
         margin: 1rem 1rem 0 0;
         @include btnPrimary;
+        &:hover {
+            background-color: transparent;
+            transition: 500ms;
+        }
     }
     &__button--color {
-        @include btnPrimary($border: 2px solid #fff, $background: transparent, $color: #fff)
+        @include btnPrimary($border: 2px solid #fff, $background: transparent);
+        &:hover {
+            background-color: #fff;
+            transition: 500ms;
+            & > .hero__link--color {
+                color: #000;
+            }
+        }
+    }
+    &__link {
+        &--color {
+            color: #fff;
+        }
     }
     &__img {
         position: relative;
@@ -146,6 +207,34 @@ body {
     }
 }
 
+@media screen and (max-width: 600px){
+    .hero {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        &__container {
+            text-align: center;
+            padding-block: 3rem;
+        }
+        &__title {
+            font-size: 2rem;
+        }
+        &__text {
+            font-size: 1rem;
+        }
+        &__img {
+            width: 100%;
+        }
+        &__back, &__pig {
+            width: inherit;
+        }
+        &__pig{
+            left: 0rem;
+            top: 1rem;
+        }
+    }
+}
+
 /*********************\
         About
 \*********************/
@@ -156,6 +245,16 @@ body {
         max-width: 1600px;
         margin: auto;
         @extend %H2;
+        position: relative;
+        &:after {
+            content: "";
+            width: 3rem;
+            height: 0.30rem;
+            position: absolute;
+            background-color: #fff;
+            left: 0;
+            top: 1.5rem;
+        }
     }
     &__container {
         padding: 5rem;
@@ -173,6 +272,23 @@ body {
     &__subtile {
         @extend %H3;
         margin-bottom: 2rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .about {
+        &__container {
+            display: block;
+            padding: inherit;
+        }
+        &__title {
+            padding-inline: 2rem;
+            &::after {
+                left: 2rem;
+            }
+        }
+        &__card {
+            padding-block: 1rem;
+        }
     }
 }
 
@@ -201,9 +317,6 @@ body {
         position: relative;
         height: 3rem;
         margin: 0 2.5rem;
-        &:nth-child(3n){
-            background-color: red;
-        }
     }
     &__button {
         width: 3rem;
@@ -242,7 +355,17 @@ body {
 .card{
     background-color: $colorFive;
 }
-
+@media screen and (max-width: 600px){
+    .emrys {
+        &__container {
+            display: flex;
+            margin: 0;
+        }
+        &__control {
+            margin: 0 2rem;
+        }
+    }
+}
 /*********************\
         Shop
 \*********************/
@@ -252,7 +375,7 @@ body {
     justify-content: space-between;
     position: relative;
     height: 47vh;
-    &__img-Shop {
+    &__img-shop {
         border: 8px solid $colorSecondary;
         border-left: 0;
         border-radius: 0px 10px 10px 0;
@@ -286,6 +409,31 @@ body {
     }
 }
 
+@media screen and (max-width: 600px){
+    .shop {
+        display: block;
+        height: inherit;
+        &__container {
+            height: 15rem;
+            padding: 3rem 0 0 0;
+        }
+        &__img-shop {
+            width: 250px;
+        }
+        &__img-dot {
+            left: 8rem;
+            top: 5.5rem;
+            width: 150px;
+        }
+        &__card {
+            width: inherit;
+        }
+        &__description {
+            padding: 0;
+        }
+    }
+}
+
 /*********************\
         Partners
 \*********************/
@@ -315,6 +463,10 @@ body {
     }
     &__button {
         @include btnPrimary ($border: 2px solid #fff);
+        &:hover {
+            background-color: transparent;
+            transition: 500ms;
+        }
     }
     &__container {
         display: grid;
@@ -330,6 +482,17 @@ body {
         align-items: center;
     }
 }
+@media screen and (max-width: 600px){
+    .partners {
+        &__card {
+            display: block;
+        }
+        &__container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    }
+}
 
 /*********************\
         Subscribe
@@ -338,10 +501,22 @@ body {
 .subscription {
     background: rgb(104,176,171);
     background: linear-gradient(346deg, rgba(104,176,171,1) 39%, rgba(68,109,246,1) 100%);
-    padding: 3rem 0 4rem 0;
+    padding: 2rem 2rem 3rem 2rem;
     &__title {
         @extend %H2;
         color: #fff;
+        padding-bottom: 1rem;
+        position: relative;
+        &:after {
+            content: "";
+            width: 3rem;
+            height: 0.30rem;
+            position: absolute;
+            background-color: #fff;
+            left: 0;
+            top: 1.5rem;
+        }
+
     }
     &__back {
         width: 900px;
@@ -354,6 +529,17 @@ body {
     }
     &__button {
         @include btnPrimary ($border: 2px solid #fff);
+        &:hover {
+            background-color: transparent;
+            transition: 500ms;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .subscription {
+        &__back {
+            width: inherit;
+        }
     }
 }
 
@@ -364,9 +550,19 @@ body {
 .footer {
     background-color: $colorFooter;
     color: #fff;
+    padding: 2rem;
     &__title {
         @extend %H4;
-        padding-top: 2rem;
+        position: relative;
+        &:after {
+            content: "";
+            width: 3rem;
+            height: 0.30rem;
+            position: absolute;
+            background-color: #fff;
+            left: 0;
+            top: 1.5rem;
+        }
     }
     &__container {
         max-width: 1550px;
@@ -374,12 +570,23 @@ body {
         display: flex;
         justify-content: space-between;
     }
+    &__contact {
+        padding-top: 2rem;
+    }
     &__button {
         @include btnPrimary ($border: 2px solid #fff);
         margin-top: 1rem;
+        &:hover {
+            background-color: transparent;
+            transition: 500ms;
+            & > .footer__email {
+                color: #fff;
+            }
+        }
     }
     &__info {
         margin-top: 1rem;
+        font-size: 0.80rem;
     }
     &__item {
         margin-top: 1rem;
@@ -389,5 +596,12 @@ body {
     }
     &__coopyright {
         text-align: center;
+    }
+}
+@media screen and (max-width: 600px){
+    .footer {
+        &__container {
+            display: block;
+        }
     }
 }
