@@ -15,10 +15,15 @@
     <header id="home">
         <nav class="menuNav container">
             <a class="menuNav__logo" href="#home">Le cochon futé</a>
-            <div class="menuNav__container">
+            <div id="links" class="menuNav__container">
                 <a href="#about" class="menuNav__link animation-underline light">À propos</a>
                 <a href="mailto:johndoe@gmail.com" class="menuNav__link animation-underline light">Contact</a>
                 <a href="#" class="menuNav__link animation-underline light">FAQ</a>
+            </div>
+            <div id="toggle" class="menuNav__toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
         <section class="hero container">
@@ -75,35 +80,58 @@
                     Comment fonctionne<br/>
                     emrys ?
                 </h2>
-                <p class="emrys__text">
-                    Lorem ipsum dolor sit amet. Qui nulla provident aut pariatur fugit<br/>
-                    qui commodi quia ut labore nesciunt et vitae nobis ut enim ullam<br/>
-                    est sint dolore? 33 omnis fugiat eos libero eaque et eligendi<br/>
-                    beatae ut galisum quod. Et atque perspiciatis aut omnis assumenda<br/>
-                    aut possimus deserunt qui adipisci dicta est dolorem repellendus<br/>
-                    sit odit autem.
-                </p>
+                <div>
+                    <p class="emrys__text activeContent" id="one" data-tab="1">
+                        Lorem ipsum dolor sit amet. Qui nulla provident aut pariatur fugit<br/>
+                        qui commodi quia ut labore nesciunt et vitae nobis ut enim ullam<br/>
+                        est sint dolore? 33 omnis fugiat eos libero eaque et eligendi<br/>
+                        beatae ut galisum quod. Et atque perspiciatis aut omnis assumenda<br/>
+                        aut possimus deserunt qui adipisci dicta est dolorem repellendus<br/>
+                        sit odit autem.
+                    </p>
+                    <p class="emrys__text" id="two" data-tab="2">
+                        Lorem ipsum dolor sit amet. Qui nulla provident aut pariatur fugit<br/>
+                        qui commodi quia ut labore nesciunt et vitae nobis ut enim ullam<br/>
+                        eseaque et eligendi<br/>
+                        beatae ut galisum quod. Et atque perspiciatis aut omnis assumenda<br/>
+                        aut possimus deserunt qui adipisci dicta est dolorem repellendus<br/>
+                        sit odit autem.
+                    </p>
+                    <p class="emrys__text" id="three" data-tab="3">
+                        Lorem ipsum dolor sit amet. Qui nulla provident aut pariatur fugit<br/>
+                        est sint dolore? 33 omnis fugiat eos libero eaque et eligendi<br/>
+                        beatae ut galisum quod. Et atque perspiciatis aut omnis assumenda<br/>
+                        aut possimus deserunt qui adipisci dicta est dolorem repellendus<br/>
+                        sit odit autem.
+                    </p>
+                    <p class="emrys__text" id="four" data-tab="4">
+                        Lorem ipsum dolor sit amet. Qui nulla provident aut pariatur fugit<br/>
+                        qui commodi quia ut labore nesciunt et vitae nobis ut enim ullam<br/>
+                        est sint dolore? 33 omnis fugiat eos libero eaque et eligendi<br/>
+                        sit odit autem.
+                    </p>
+                </div>
                 <div class="emrys__container">
                     <div class="emrys__control">
-                        <button class="emrys__button">
+                        <button id="piece-btn" class="emrys__button active" data-tab="1">
                             <img src="./img/piece.svg" alt="pièce emrys, également nommée coin.">
                         </button>
                         <div class="emrys__button--shadow"></div>
                     </div>
                     <div class="emrys__control">
-                        <button class="emrys__button">
+                        <button id="part-btn" class="emrys__button" data-tab="2">
                             <i class="fas fa-cheese fa-2x"></i>
                         </button>
                         <div class="emrys__button--shadow part"></div>
                     </div>
                     <div class="emrys__control">
-                        <button class="emrys__button">
+                        <button id="tree-btn" class="emrys__button" data-tab="3">
                             <img src="./img/arbre-de-fidelité.svg" alt="arbre de fidelité">
                         </button>
                         <div class="emrys__button--shadow tree"></div>
                     </div>
                     <div class="emrys__control">
-                        <button class="emrys__button">
+                        <button id="card-btn" class="emrys__button" data-tab="4">
                             <i class="fas fa-credit-card fa-2x"></i>
                         </button>
                         <div class="emrys__button--shadow card"></div>
@@ -188,6 +216,8 @@
             </ul>
         </div>
         <p class="container footer__coopyright">Jérémie Permentier © 2021 | Tous droits réservés </p>
+        <script src="/nav.js"></script>
+        <script src="/tabs.js"></script>
     </footer>
 </body>
 </html>

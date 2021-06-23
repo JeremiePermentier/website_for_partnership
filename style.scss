@@ -92,6 +92,9 @@ body {
         justify-content: space-between;
         width: 300px;
     }
+    &__toggle {
+        display: none;
+    }
     &__link {
         color: $colorThree;
         font-size: 18px;
@@ -145,6 +148,58 @@ body {
     }
 }
 
+@media screen and (max-width: 600px){
+    .menuNav {
+        &__logo {
+            padding-left: 1rem;
+        }
+        &__container {
+            position: absolute;
+            flex-direction: column;
+            width: 100%;
+            top: 60px;
+            background-color: #ffffffe1;
+            transform: translateX(-600px);
+            &--open {
+                animation: open 500ms ease both;
+            }
+            &--close {
+                animation: close 500ms ease;
+            }
+        }
+        &__toggle {
+            display: block;
+            margin-inline: 1rem;
+            & > span {
+                width: 2rem;
+                height: 5px;
+                margin-block: 5px;
+                background: $colorThree;
+                display: block;
+            }
+        }
+        &__link {
+            color: $colorText;
+            margin: 1rem;
+        }
+    }
+}
+@keyframes open {
+    0%{
+        transform: translateX(600px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes close {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(600px);
+    }
+}
 /*********************\
         Hero
 \*********************/
@@ -302,9 +357,12 @@ body {
         padding: 4rem 0 2rem 0;
     }
     &__text {
+        height: 150px;
         margin: 2rem 0;
         padding: 1rem;
         border-left: 4px solid $colorFour;
+        position: absolute;
+        opacity: 0;
     }
     &__container {
         display: flex;
@@ -340,7 +398,21 @@ body {
         }
     }
 }
-
+.active {
+    background-color: rgb(223, 221, 221);
+}
+.activeContent {
+    position: static;
+    animation: fade 0.5s forwards;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .part {
     background-color: $colorSecondary;
 }
