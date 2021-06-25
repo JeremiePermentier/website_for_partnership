@@ -292,12 +292,12 @@ body {
     flex-direction: column;
   }
   .hero__back {
-    width: 350px;
+    width: 325px;
   }
   .hero__pig {
     left: -1rem;
     top: 0rem;
-    width: 350px;
+    width: 325px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -634,9 +634,13 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .partners__card {
     display: block;
+  }
+  .partners__square {
+    width: 100%;
+    height: 125px;
   }
   .partners__container {
     grid-template-columns: 1fr 1fr;
