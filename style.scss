@@ -148,6 +148,12 @@ body {
     }
 }
 
+@media screen and (min-width: 600px) and (max-width: 1600px){
+    .menuNav {
+        padding: 0 1rem;
+    }
+}
+
 @media screen and (max-width: 600px){
     .menuNav {
         &__logo {
@@ -261,11 +267,22 @@ body {
         transform: rotate(360deg);
     }
 }
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1200px){
     .hero {
         display: flex;
         flex-direction: column;
+        &__back {
+            width: 350px;
+        }
+        &__pig {
+            left: -1rem;
+            top: 0rem;
+            width: 350px;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .hero {
         height: 100vh;
         &__container {
             text-align: center;
@@ -329,10 +346,25 @@ body {
         margin-bottom: 2rem;
     }
 }
-@media screen and (max-width: 600px){
+
+@media screen and (min-width: 600px) and (max-width: 1600px){
+    .about {
+        &__title {
+            padding: 0 1rem;
+            &:after {
+                left: 1rem;
+            }
+        }
+        &__container {
+            padding-inline: 1rem;
+        }
+    }
+}
+@media screen and (max-width: 1000px){
     .about {
         &__container {
-            display: block;
+            display: flex;
+            flex-wrap: wrap;
             padding: inherit;
         }
         &__title {
@@ -492,7 +524,33 @@ body {
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1300px){
+    .shop {
+        &__img-shop {
+            width: 400px;
+        }
+        &__img-dot {
+            width: 200px;
+            left: 15rem;
+            top: 6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 950px){
+    .shop {
+        &__img-shop {
+            width: 300px;
+        }
+        &__img-dot {
+            width: 150px;
+            left: 12rem;
+            top: 6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 740px){
     .shop {
         display: block;
         height: inherit;
@@ -623,10 +681,10 @@ body {
         }
     }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1000px){
     .subscription {
         &__back {
-            width: inherit;
+            width: 100%;
         }
     }
 }
